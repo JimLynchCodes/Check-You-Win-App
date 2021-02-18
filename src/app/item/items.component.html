@@ -10,8 +10,21 @@ So you can still use template expressions, bindings, templates as well as all th
 The ActionBar is the NativeScript common abstraction over the Android ActionBar and iOS NavigationBar.
 http://docs.nativescript.org/ui/action-bar
 -->
-<ActionBar title="My App">
-</ActionBar>
+<!-- <Page > -->
+
+    <ActionBar title="" class="text-center">
+    </ActionBar>
+
+    <!-- <Label text="Lores Ipsum..." textWrap="true" class="titan-one-font"></Label> -->
+    
+    <StackLayout>
+        <!-- <Lottie:LottieView src="res://animations/heart.json" height="250" loop="false" autoPlay="true" viewport="" scaleY="2.25" scaleX="2.25"/> -->
+        <Lottie:LottieView src="res://animations/check-animation.json" height="350" loop="false" autoPlay="false" viewport="" scaleY=".8" scaleX=".8" (loaded)="lottieViewLoaded($event)" />
+        
+        <Label #win text="You Win!" textWrap="true" class="titan-one-font you-win-text" ></Label>
+    </StackLayout>
+
+<!-- </Page> -->
 
 <!--
 The GridLayout arranges its child elements in a table structure of rows and columns.
@@ -23,7 +36,10 @@ These components make use of the NativeScript core theme, which styles them with
 The theme also provides a set of helper class names such as p-20, h1, h2, and text-center to enhance styling.
 You can learn more about the NativeScript core theme at https://github.com/nativescript/theme
 -->
-<GridLayout>
+
+
+
+<!-- <GridLayout>
     <ListView [items]="items">
         <ng-template let-item="item">
             <StackLayout>
@@ -31,4 +47,4 @@ You can learn more about the NativeScript core theme at https://github.com/nativ
             </StackLayout>
         </ng-template>
     </ListView>
-</GridLayout>
+</GridLayout> -->

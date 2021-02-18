@@ -1,0 +1,11 @@
+.titan-one-font {
+    font-family: 'TitanOne-Regular','Titan One Regular','Titan-One-Regular','Titan_One_Regular','Titan One','Titan_One','Titan-One';
+    color: #329AFF;
+  }
+    
+  .you-win-text {
+    text-align: center;
+    font-size: 65;
+    margin-top: 70;
+    opacity: 0;
+  }
