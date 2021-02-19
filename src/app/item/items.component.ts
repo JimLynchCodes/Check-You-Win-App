@@ -1,10 +1,8 @@
 import { Component, OnInit, ViewChild, ElementRef } from "@angular/core";
 
-import { Item } from "./item";
-import { ItemService } from "./item.service";
 import { LottieView } from 'nativescript-lottie';
 import { registerElement } from '@nativescript/angular';
-import { Label } from "@nativescript/core";
+import { Label, Enums } from "@nativescript/core";
 
 registerElement('LottieView', () => LottieView);
 
@@ -14,42 +12,21 @@ registerElement('LottieView', () => LottieView);
     styleUrls: ['./items.component.css'],
     moduleId: module.id
 })
-export class ItemsComponent implements OnInit {
-    items: Array<Item>;
+export class ItemsComponent {
 
     public loop: boolean = true;
     public src: string;
     public autoPlay: boolean = true;
     public animations: Array<string>;
-
     private _lottieView: LottieView;
 
     @ViewChild('win', { read: ElementRef, static: false }) youWinText: ElementRef;
     private youWinTexteLabel: Label;
 
-    constructor(private itemService: ItemService) {
-        //   this.animations = [
-        //     'lightbulb.json'
-        //   ];
-        //   this.src = this.animations[0];
-    }
-
-    // ngAfterViewIniti
+    constructor() { }
 
     ngAfterViewInit() {
-
         console.log('view init...', this.youWinTexteLabel)
-        // console.log("afterViewInit switches: ", this.switches.length);
-
-        // if (isAndroid) {
-        //     this.switches.forEach(
-        //         (item) => {
-        //             const nelem = item.nativeElement;
-        //             console.log(nelem.android);
-        //             console.log(nelem.nativeView);
-        //         }
-        //     );
-        // }
     }
 
     lottieViewLoaded(event) {
@@ -61,42 +38,35 @@ export class ItemsComponent implements OnInit {
 
         this._lottieView.completionBlock = (bool) => {
             console.log('completed', bool);
-
             console.log('you win: ', this.youWinText);
-
-            // var lbl = <Label>event.view.getViewById("youWinText");
-
-            // console.log('nv: ', this.youWinTexteLabel.nativeView)
             console.log('label: ', this.youWinTexteLabel)
 
-            this.youWinText.nativeElement.animate(
-                {
-                    opacity: 1,
-                    duration: 2000
-                }
-            )
-
-            // console.log('you win event: ', event);
-
-            // let animation = new Animation([
-            //     {
-            //         // height: 200,
-            //         duration: 2000,
-            //         target: this.youWinTexteLabel,
-            //         delay: 200
-            //     }
-            // ])
-
-            // this.youWinText.animate(
-            // )
+            this.youWinText.nativeElement.animate({
+                opacity: 1,
+                duration: 900,
+                delay: 50,
+                curve: Enums.AnimationCurve.easeInOut
+            })
+                .then(() => {
+                    this.youWinText.nativeElement.animate({
+                        scale: { x: 1.27, y: 1.27 },
+                        delay: 70,
+                        duration: 450,
+                        curve: Enums.AnimationCurve.easeInOut
+                    })
+                        .then(() => {
+                            this.youWinText.nativeElement.animate({
+                                scale: { x: 1, y: 1 },
+                                delay: 30,
+                                duration: 450,
+                                curve: Enums.AnimationCurve.easeIn
+                            })
+                        })
+                })
 
         }
 
         this._lottieView.playAnimation();
-    }
-
-    ngOnInit(): void {
-        this.items = this.itemService.getItems();
     }
 
 }
