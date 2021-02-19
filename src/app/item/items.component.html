@@ -10,21 +10,15 @@ So you can still use template expressions, bindings, templates as well as all th
 The ActionBar is the NativeScript common abstraction over the Android ActionBar and iOS NavigationBar.
 http://docs.nativescript.org/ui/action-bar
 -->
-<!-- <Page > -->
 
-    <ActionBar title="" class="text-center">
-    </ActionBar>
+<ActionBar title="" class="text-center">
+</ActionBar>
 
-    <!-- <Label text="Lores Ipsum..." textWrap="true" class="titan-one-font"></Label> -->
-    
-    <StackLayout>
-        <!-- <Lottie:LottieView src="res://animations/heart.json" height="250" loop="false" autoPlay="true" viewport="" scaleY="2.25" scaleX="2.25"/> -->
-        <Lottie:LottieView src="res://animations/check-animation.json" height="350" loop="false" autoPlay="false" viewport="" scaleY=".8" scaleX=".8" (loaded)="lottieViewLoaded($event)" />
-        
-        <Label #win text="You Win!" textWrap="true" class="titan-one-font you-win-text" ></Label>
-    </StackLayout>
+<StackLayout>
+    <Lottie:LottieView src="res://animations/check-animation.json" height="350" loop="false" autoPlay="false" viewport="" scaleY=".8" scaleX=".8" (loaded)="lottieViewLoaded($event)" />
 
-<!-- </Page> -->
+    <Label #win text="You Win!" textWrap="true" class="titan-one-font you-win-text"></Label>
+</StackLayout>
 
 <!--
 The GridLayout arranges its child elements in a table structure of rows and columns.

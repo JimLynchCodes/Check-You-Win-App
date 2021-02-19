@@ -1,19 +1,25 @@
 {
-  "name": "@nativescript/template-hello-world-ng",
+  "nativescript": {
+    "id": "com.shwooga.check_you_win",
+    "tns-android": {
+      "version": "1.0.0"
+    },
+    "tns-ios": {
+      "version": "1.0.0"
+    }
+  },
+  "name": "@shwooga/check-you-win",
   "main": "main.js",
   "version": "7.0.9",
-  "author": "NativeScript Team <oss@nativescript.org>",
-  "description": "NativeScript Application",
+  "author": "Jim Lynch <jim.lynch@evaluates2.com>",
+  "description": "",
   "license": "SEE LICENSE IN <your-license-filename>",
   "publishConfig": {
     "access": "public"
   },
   "keywords": [
-    "nativescript",
-    "mobile",
-    "angular",
-    "{N}",
-    "template"
+    "check",
+    "you win"
   ],
   "repository": "<fill-your-repository-here>",
   "bugs": {
@@ -46,5 +52,5 @@
     "typescript": "~4.0.0"
   },
   "private": "true",
-  "readme": "NativeScript Application"
+  "readme": "README.md"
 }
