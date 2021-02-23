@@ -2,10 +2,10 @@
   "nativescript": {
     "id": "com.shwooga.check_you_win",
     "tns-android": {
-      "version": "1.0.0"
+      "version": "1.0.3"
     },
     "tns-ios": {
-      "version": "1.0.0"
+      "version": "1.0.3"
     }
   },
   "name": "@shwooga/check-you-win",

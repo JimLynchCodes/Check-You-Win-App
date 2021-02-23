@@ -1,7 +1,7 @@
 import { NativeScriptConfig } from '@nativescript/core';
 
 export default {
-  id: 'org.nativescript.checkyou14',
+  id: 'check-you-win',
   appPath: 'src',
   appResourcesPath: 'App_Resources',
   android: {
