@@ -34,7 +34,7 @@ ns prepare ios --release --for-device --provision Ea-9-8b-profile --force
 
 build with provision:
 ```
-ns build ios --for-device --release --provision --force
+ns build ios --for-device --release --provision Ea-9-8b-profile --force
 ```
 
 publish ios app:
